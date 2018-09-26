@@ -1,9 +1,24 @@
-function countLeters(string) {
+function countLetters(string) {
 
-    var noSpaceString = string.replace(/\s/g, '');
+    var noSpaceString = string.split(" ").join('');
+    var letterCounts = {};
 
-    console.log(noSpaceString);
+    for (var i = 0; i < noSpaceString.length; i++){
+        // go one leter at a time
+        // increment count for each leter
+        // store each count into object
 
-};
+        // if letter doesn not yet exist in object initiate to 1
+        if (!letterCounts[noSpaceString[i]]) {
+            letterCounts[noSpaceString[i]] = 1;
+        // otherwise increment
+        } else {
+            letterCounts[noSpaceString[i]] += 1;
+        }
+    }
 
-countLeters("Hey guys I like pizza.");
+    console.log(letterCounts);
+
+ };
+ 
+ countLetters("lighthouse in the house");
